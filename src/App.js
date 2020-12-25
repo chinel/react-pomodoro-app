@@ -8,8 +8,17 @@ function padTime(time) {
 export default function App() {
   const [title, setTitle] = useState("Let the countdown begin!!!");
   const [timeLeft, setTimeLeft] = useState(25 * 60);
+
+  function startTimer() {
+    //this setinterval function runs every one second
+    setInterval(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+  }
+
   const minutes = padTime(Math.floor(timeLeft / 60));
   const seconds = padTime(timeLeft - minutes * 60);
+
   return (
     <div className="app">
       <h2>Pomodoro App!</h2>
@@ -22,7 +31,7 @@ export default function App() {
       </div>
 
       <div className="buttons">
-        <button>Start</button>
+        <button onClick={startTimer}>Start</button>
         <button>Stop</button>
         <button>Reset</button>
       </div>
