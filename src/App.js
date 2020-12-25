@@ -10,9 +10,14 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState(25 * 60);
 
   function startTimer() {
-    //this setinterval function runs every one second
+    //this setinterval function runs every one second, because 1000 milliseconds was passed
+
     setInterval(() => {
-      setTimeLeft(timeLeft - 1);
+      setTimeLeft((timeLeft) => {
+        if (timeLeft >= 1) return timeLeft - 1;
+
+        return 0;
+      });
     }, 1000);
   }
 
