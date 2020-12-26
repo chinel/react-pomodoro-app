@@ -29,13 +29,15 @@ export default function App() {
   function stopTimer() {
     if (intervalRef.current === null) return;
 
-    clearInterval(intervalRef.current);
+    clearInterval(intervalRef.current); // clear interval is a built in function that resets the interval to zero
+    intervalRef.current = null;
     setTitle("Keep it up");
     setIsRunning(false);
   }
 
   function resetTimer() {
     clearInterval(intervalRef.current);
+    intervalRef.current = null;
     setTitle("Ready to go another round?");
     setTimeLeft(25 * 60);
     setIsRunning(false);
