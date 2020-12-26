@@ -21,6 +21,10 @@ export default function App() {
     }, 1000);
   }
 
+  function stopTimer() {
+    clearInterval();
+  }
+
   const minutes = padTime(Math.floor(timeLeft / 60));
   const seconds = padTime(timeLeft - minutes * 60);
 
