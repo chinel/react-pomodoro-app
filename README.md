@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# React Pomodoro App
+
+### [Live Site]()
+
+![Chat Application](https://i.imgur.com/2bIfY43.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
